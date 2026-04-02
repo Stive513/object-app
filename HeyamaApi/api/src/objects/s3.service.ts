@@ -10,8 +10,8 @@ export class S3Service {
   private client: S3Client;
 
   constructor() {
-  const accessKeyId = process.env.S3_ACCESS_KEY_ID;
-  const secretAccessKey = process.env.S3_SECRET_ACCESS_KEY;
+  const accessKeyId = process.env.S3_KEY;
+  const secretAccessKey = process.env.S3_SECRET;
   const endpoint = process.env.S3_ENDPOINT;
 
   if (!accessKeyId || !secretAccessKey || !endpoint) {

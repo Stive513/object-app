@@ -17,6 +17,12 @@ export class S3Service {
   if (!accessKeyId || !secretAccessKey || !endpoint) {
     throw new Error('Identifiants S3 manquants');
   }
+    // s3.service.ts
+console.log("ENV CHECK:", {
+  key: process.env.S3_KEY,
+  secret: process.env.S3_SECRET,
+  endpoint: process.env.S3_ENDPOINT,
+});
 
   this.client = new S3Client({
     region: 'auto',

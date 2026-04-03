@@ -8,8 +8,8 @@ export default function ObjectForm() {
   const [description, setDescription] = useState("");
   const [image, setImage] = useState<any>(null);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
 
     const formData = new FormData();
     formData.append("title", title);

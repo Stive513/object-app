@@ -2,13 +2,6 @@
 
 import { useState } from "react";
 import { api } from "../lib/api";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription
-} from "@/components/ui/dialog";
 
 export default function ObjectForm() {
   const [title, setTitle] = useState("");
@@ -38,16 +31,7 @@ export default function ObjectForm() {
 
   return (
     <div>
-        <Dialog>
-  <DialogContent>
-    <DialogHeader>
-      <DialogTitle>Créer un objet</DialogTitle>
-      <DialogDescription>
-        Remplissez les informations ci-dessous
-      </DialogDescription>
-    </DialogHeader>
-
-    <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
       <input
         placeholder="Titre"
         value={title}
@@ -67,8 +51,6 @@ export default function ObjectForm() {
 
       <button type="submit">Créer</button>
     </form>
-  </DialogContent>
-</Dialog>
     </div>
   );
 }

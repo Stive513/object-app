@@ -46,7 +46,12 @@ export default function ObjectForm() {
 
       <input
         type="file"
-        onChange={(e) => setImage(e.target.files[0])}
+        onChange={(e) => {
+  const file = e.target.files?.[0];
+  if (file) {
+    setImage(file);
+  }
+}}
       />
 
       <button type="submit">Créer</button>

@@ -1,11 +1,12 @@
 import axios from "axios";
 import io from "socket.io-client";
 
-const API = "https://object-app-1.onrender.com",
-});
+const API = process.env.NEXT_PUBLIC_API_URL;
 
-export const socket = io(API);
+if (!API) {
+  throw new Error("NEXT_PUBLIC_API_URL is not defined");
+}
 
-export const api = axios.create({
-  baseURL: API,
+export const socket = io(API, {
+  transports: ["websocket", "polling"],
 });
